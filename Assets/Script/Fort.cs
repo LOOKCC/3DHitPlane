@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class Fort : MonoBehaviour {
+public class Fort : MonoBehaviour
+{
     private Transform fort_tran;
     private RaycastHit hit;
     private Ray ray;
@@ -25,7 +26,8 @@ public class Fort : MonoBehaviour {
     private float lownumber = 0;
     private float bombnumber = 0;
 
-    void Start() {
+    void Start()
+    {
         myManager = GameObject.Find("Main Camera").GetComponent<Manager>();
         fort_tran = gameObject.GetComponent<Transform>();
         liner = gameObject.GetComponent<LineRenderer>();
@@ -37,7 +39,8 @@ public class Fort : MonoBehaviour {
         UseBombAudio = audios[4];
     }
 
-    void Update() {
+    void Update()
+    {
         shoot();
         usebomb();
         uselow();
@@ -73,13 +76,13 @@ public class Fort : MonoBehaviour {
     }
     void uselow()
     {
-        if (Input.GetKeyDown(KeyCode.Q)&&lownumber>0)
+        if (Input.GetKeyDown(KeyCode.Q) && lownumber > 0)
         {
             myManager.gamestate = 1;
             lownumber--;
             lowtext.text = "FrozenLeft: " + lownumber;
             audiosplay.PlayOneShot(UseLowAudio);
-            //wait
+            StartCoroutine(waitlow());
             myManager.gamestate = 0;
         }
     }
@@ -91,9 +94,18 @@ public class Fort : MonoBehaviour {
             bombnumber--;
             bombtext.text = "BombLeft: " + bombnumber;
             audiosplay.PlayOneShot(UseBombAudio);
-            //wait
+            StartCoroutine(waitbomb());
             myManager.gamestate = 0;
         }
     }
+    IEnumerator waitlow()
+    {
+        yield return new WaitForSeconds(3);
+    }
+    IEnumerator waitbomb()
+    {
+        yield return new WaitForSeconds(0.5f);
+    }
+
 }
 

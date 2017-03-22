@@ -36,29 +36,44 @@ public class Create : MonoBehaviour {
     }
     void createplane()
     {
-            GameObject goplane = Instantiate(plane, new Vector3(100f, Random.Range(6f,11f), Random.Range(-12f,12f)), Quaternion.Euler(0f,-90f,0f)) as GameObject;
+        if (myManager.gamestate == 0 || myManager.gamestate == 2)
+        {
+            GameObject goplane = Instantiate(plane, new Vector3(100f, Random.Range(6f, 11f), Random.Range(-12f, 12f)), Quaternion.Euler(0f, -90f, 0f)) as GameObject;
             planerb = goplane.GetComponent<Rigidbody>();
             planerb.AddForce(-15, 0, 0, ForceMode.Impulse);
+        }
     }
     void createplane3()
     {
-        GameObject goplane3 = Instantiate(bombplane, new Vector3(100f, Random.Range(6f, 11f), Random.Range(-12f, 12f)), Quaternion.Euler(-90f, -90f, -90f)) as GameObject;
-        plane3rb = goplane3.GetComponent<Rigidbody>();
-        plane3rb.AddForce(-45, 0, 0, ForceMode.Impulse);
+        if(myManager.gamestate == 0 || myManager.gamestate == 2)
+        {
+            GameObject goplane3 = Instantiate(bombplane, new Vector3(100f, Random.Range(6f, 11f), Random.Range(-12f, 12f)), Quaternion.Euler(-90f, -90f, -90f)) as GameObject;
+            plane3rb = goplane3.GetComponent<Rigidbody>();
+            plane3rb.AddForce(-45, 0, 0, ForceMode.Impulse);
+        }
     }
     void createbombplane()
     {
-        GameObject gobombplane = Instantiate(plane3, new Vector3(100f, Random.Range(6f, 11f), Random.Range(-12f, 12f)), Quaternion.Euler(-90f, 0f, 180f)) as GameObject;
-        bombplanerb = gobombplane.GetComponent<Rigidbody>();
-        bombplanerb.AddForce(-20, 0, 0, ForceMode.Impulse);
+        if(myManager.gamestate == 0 || myManager.gamestate == 2)
+        {
+            GameObject gobombplane = Instantiate(plane3, new Vector3(100f, Random.Range(6f, 11f), Random.Range(-12f, 12f)), Quaternion.Euler(-90f, 0f, 180f)) as GameObject;
+            bombplanerb = gobombplane.GetComponent<Rigidbody>();
+            bombplanerb.AddForce(-20, 0, 0, ForceMode.Impulse);
+        }
     }
     void createlow()
     {
-        Instantiate(low, new Vector3(4f, 1f, 4f), Quaternion.identity);
+        if (myManager.gamestate == 0 || myManager.gamestate == 2 ||myManager.gamestate==1)
+        {
+            Instantiate(low, new Vector3(4f, 1f, 4f), Quaternion.identity);
+        }
     }
     void createbomb()
     {
-        Instantiate(bomb, new Vector3(4f, 1f, -4f), Quaternion.identity);
+        if(myManager.gamestate == 0 || myManager.gamestate == 2 || myManager.gamestate == 1)
+        {
+            Instantiate(bomb, new Vector3(4f, 1f, -4f), Quaternion.identity);
+        }
     }
     void showtime()
     {
@@ -66,7 +81,6 @@ public class Create : MonoBehaviour {
         if (nowtime > 0)
         {
             time.text = "Time: " + nowtime;
-            myManager.gamestate = 0;
         }
 
         if (nowtime <= 0)

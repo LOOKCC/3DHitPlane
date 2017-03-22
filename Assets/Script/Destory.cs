@@ -6,14 +6,15 @@ public class Destory : MonoBehaviour {
 
     private Transform m_Transform;
     private Manager myManager;
+    private Rigidbody myRigidbody;
 
    
 
     void Start()
     {
-       
         myManager = GameObject.Find("Main Camera").GetComponent<Manager>();
         m_Transform = gameObject.GetComponent<Transform>();
+        myRigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
 	void Update () {
@@ -36,7 +37,7 @@ public class Destory : MonoBehaviour {
         }
         if (myManager.gamestate == 1)
         {
-            //forzen
+            //
         }
         if (myManager.gamestate == 0)
         {
@@ -44,7 +45,7 @@ public class Destory : MonoBehaviour {
         }
         if (myManager.gamestate == 3|| myManager.gamestate == 4)
         {
-            Destroy(gameObject);
+            Destroy(gameObject);2
         }
         
     }
