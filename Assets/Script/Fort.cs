@@ -94,7 +94,7 @@ public class Fort : MonoBehaviour
             bombnumber--;
             bombtext.text = "BombLeft: " + bombnumber;
             audiosplay.PlayOneShot(UseBombAudio);
-            StartCoroutine(waitbomb());
+          //  StartCoroutine(waitbomb());
             myManager.gamestate = 0;
         }
     }
@@ -106,6 +106,5 @@ public class Fort : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
     }
-
 }
 

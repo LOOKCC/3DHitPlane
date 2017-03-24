@@ -49,6 +49,17 @@
      <Compile Include="Assets\Script\Destory.cs" />
      <Compile Include="Assets\Script\Fort.cs" />
      <Compile Include="Assets\Script\Manager.cs" />
+     <Compile Include="Assets\Script\pool.cs" />
+     <Compile Include="Assets\Scriptspool\BombPlanepool.cs" />
+     <Compile Include="Assets\Scriptspool\Bombpool.cs" />
+     <Compile Include="Assets\Scriptspool\Createpool.cs" />
+     <Compile Include="Assets\Scriptspool\DestoryLAB.cs" />
+     <Compile Include="Assets\Scriptspool\Destorypool.cs" />
+     <Compile Include="Assets\Scriptspool\Fortpool.cs" />
+     <Compile Include="Assets\Scriptspool\Lowpool.cs" />
+     <Compile Include="Assets\Scriptspool\Managerpool.cs" />
+     <Compile Include="Assets\Scriptspool\Plane3pool.cs" />
+     <Compile Include="Assets\Scriptspool\Planepool.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -31,13 +31,26 @@ public class Destory : MonoBehaviour {
     }
     void examstare()
     {
-        if (myManager.gamestate == 2)
+        /*     if (myManager.gamestate == 2)
+             {
+                 Destroy(gameObject);
+                 Debug.Log("boom");
+             }
+             if (myManager.gamestate == 1)
+             {
+                 beganlow();
+                 StartCoroutine(waitlow());
+                 endlow();
+                 Debug.Log("low");
+             }
+             */
+        if (Input.GetKeyDown(KeyCode.W))
         {
             Destroy(gameObject);
         }
-        if (myManager.gamestate == 1)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            //
+            Destroy(myRigidbody);
         }
         if (myManager.gamestate == 0)
         {
@@ -45,8 +58,22 @@ public class Destory : MonoBehaviour {
         }
         if (myManager.gamestate == 3|| myManager.gamestate == 4)
         {
-            Destroy(gameObject);2
+            Destroy(gameObject);
         }
         
     }
+    public void beganlow()
+    {
+        myRigidbody.AddForce(15, 0, 0, ForceMode.Impulse);
+    }
+    public void endlow()
+    {
+        myRigidbody.AddForce(-15, 0, 0, ForceMode.Impulse);
+    }
+    IEnumerator waitlow()
+    {
+        yield return new WaitForSeconds(3);
+    }
+    
+
 }
