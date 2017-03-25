@@ -45,6 +45,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FactoryMode\DestoryLB.cs" />
+     <Compile Include="Assets\FactoryMode\DestoryP.cs" />
+     <Compile Include="Assets\FactoryMode\FFort.cs" />
+     <Compile Include="Assets\FactoryMode\FManager.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryBomb.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryBombPlane.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryLB.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryLow.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryP.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryPlane.cs" />
+     <Compile Include="Assets\FactoryMode\FactoryPlane3.cs" />
+     <Compile Include="Assets\FactoryMode\Product.cs" />
+     <Compile Include="Assets\FactoryMode\ProductBombPlane.cs" />
+     <Compile Include="Assets\FactoryMode\ProductLow.cs" />
+     <Compile Include="Assets\FactoryMode\ProductPlane.cs" />
+     <Compile Include="Assets\FactoryMode\ProductPlane3.cs" />
+     <Compile Include="Assets\FactoryMode\Productbomb.cs" />
      <Compile Include="Assets\Script\Create.cs" />
      <Compile Include="Assets\Script\Destory.cs" />
      <Compile Include="Assets\Script\Fort.cs" />
